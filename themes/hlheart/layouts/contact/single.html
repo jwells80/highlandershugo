@@ -1,0 +1,37 @@
+{{ define "main" }}
+<article class="text-gray-700 sm:mx-12 mb-16 prose lg:prose-lg prose-blue">
+    <h1>{{ .Title }}</h1>
+    <form id="g-form" class="">
+
+      <div class="input">
+        <i class="fas fa-user icon"></i><input type="text" name="name" class="w-5/6">
+      </div>
+      <div class="input">
+        <i class="fas fa-at icon"></i>
+        <input type="email" name="email" class="w-5/6">
+      </div>
+      <div class="input flex justify-center">
+        <textarea name="comment" class=" w-5/6"></textarea>
+      </div>
+      <div class="flex justify-end mr-4">
+        <button id="g-form-submit" type="submit" class="bg-black rounded-2xl px-6 py-1"><i class="fas fa-paper-plane text-white"></i></button>
+      </div>
+    </form>
+    <script type="application/javascript">
+      var form = $("g-form"),
+        url = 'https://script.google.com/macros/s/AKfycbwy6TQwXIfAt-kJK4G9IjB2Vmgir-e6qusX9TFqk0My6ZKDOPP0LLZmSZgfNoNmN1Ns5w/exec',
+        submit = $('g-form-submit');
+      submit.on('click', function(e){
+        e.preventDefault;
+        $.ajax({
+          url: url,
+          method: "GET",
+          dataType: "json",
+          data: form.serializeObject()
+        }).success(
+        );
+      });
+    </script>
+    
+</article>
+{{ end }}

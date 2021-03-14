@@ -2,6 +2,7 @@
 title: Photos
 author: jasonw
 type: page
+menu: main
 date: 2016-09-21T15:03:26+00:00
 
 ---

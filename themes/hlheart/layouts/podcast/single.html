@@ -1,0 +1,11 @@
+{{ define "main" }}
+<article class="text-gray-700 px-5 md:mx-12 mb-16 prose lg:prose-lg prose-blue">
+    <h1>{{ .Title }}</h1>
+    <div>
+      <p>{{ $.Page.Params.description }}</p>
+    </div>
+    <audio controls>
+      <source src="{{ $.Page.Params.podcast_link }}" type="audio/mpeg">
+    </audio>
+</article>
+{{ end }}

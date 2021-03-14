@@ -1,0 +1,19 @@
+{{ define "main" }}
+<article class=" text-gray-700">
+     {{ range .Site.Taxonomies.tags.featured }}
+      <div class="podcast">
+        <h1 class="text-xl mb-5">
+          <a href="{{ .RelPermalink }}">
+          {{ .Title }}
+          </a>
+        </h1>
+        <p>{{.Params.description}}</p>
+        <div class="audio">
+          <audio controls class="audio-player">
+            <source src="{{ .Params.podcast_link }}" type="audio/mpeg">
+          </audio>
+        </div>
+      </div>   
+    {{ end }}
+</article>
+{{ end }}
