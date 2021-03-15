@@ -16,7 +16,7 @@
 
     <nav class="flex items-center justify-between flex-wrap">
       <div class="logo pl-5">
-        <a href="{{ .Site.Home.Permalink }}" class="flex items-center text-gray-700 font-bold">
+        <a href="{{ .Site.Home.RelPermalink }}" class="flex items-center text-gray-700 font-bold">
           <img src="/img/logo.svg" alt="{{ .Site.Title }}" class="" style="width: 150px;">
         </a>
       </div>
@@ -40,7 +40,7 @@
         <ul id="nav-menu" class="md:flex w-full md:w-auto hidden mt-2 md:mt-0 md:space-x-2">
             {{ with .Site.GetPage "/about" }}
             <li class="nav-link">
-                <a href="{{ .Permalink }}" >{{ .Title }}</a>
+                <a href="{{ .RelPermalink }}" >{{ .Title }}</a>
             </li>
             {{ end }}
             {{ range .Site.Menus.main }}
@@ -52,7 +52,7 @@
             {{ end }}
             {{ range .Site.Sections }}
             <li class="nav-link">
-                <a href="{{ .Permalink }}" class="nav-link">{{ .Title }}</a>
+                <a href="{{ .RelPermalink }}" class="nav-link">{{ .Title }}</a>
             </li>
             {{ end }}
         </ul>
